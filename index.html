@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--create icon, create scaling, link to main.css and title the webpage tab-->
+		<link
+			rel="icon"
+			href="https://emojipedia-us.s3.amazonaws.com/source/skype/289/hotel_1f3e8.png"
+		/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- CSS -->
+		<link rel="stylesheet" href="style.css" />
+		<title>Airbnb Database</title>
+	</head>
+
+	<body>
+		<!-- Header -->
+		<header>
+			<h1 class="title">🦠 Covid Report</h1>
+		</header>
+
+		<div class="main">
+			<h2>
+				Hi, welcome to my second SQL demo! Here I will use MySQL and the ETL process to turn about 17,000 rows of raw data into an informative Tableau report. We use the country with the largest net population growth as our example: India. We will be able to solve the problem of finding the top 10 cities in India that require vaccine deliveries sooner than the others. All SQL code, Tableau URL and files are available at the <a href="https://github.com/rogerqiu7/Covid-Report">link here.</a>
+      </br></br>
+	  			Skills used: Joins, Common Table Expressions's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+	  </br></br>
+			    Here's how this will be done:
+      </br></br>
+				1. Obtain and extract existing dataset on covid cases in India into csv file.
+      </br></br>
+				2. Query and transform the dataset so that only useful columns are selected and sorted.
+      </br></br>
+        		3. Load the new queried dataset into Tableau for dashboard creation
+      </br></br>
+        		4. Complete dashboard with visualzations about
+      </br></br>
+			</h2>
+
+			<ul>
+				<li>
+					To begin, we acquire a fake dataset on apartments in New York City. This set was aqcuired from Codecademy and contains around 3500 apartments:
+					<img src="images/apartments.JPG">
+				</li>
+        		<li>
+					MySQL Workbench is then used to create a new database called Airbnb. The 3500 apartments is then imported to this database as the "apartments" table with an added primary key:
+					<img src="images/MySQL.JPG">
+				</li>
+        		<li>
+					There are certain features of these apartments we want and others we don't care for so we use SQL to filter out the columns as well as rows to only display ones that are of interest to us. The new list is just 126 apartments and 11 rows: 
+				</br>
+					<img src="images/updated_apartments.JPG">
+				</li>
+        		<li>
+					To assist in the analysis of optimal apartments to purchase, we will this new dataset into a simple machine learning model called Multiple Linear-Regression using Python code. The SKlearn library allows us to create the machine learning analysis, Pandas helps manage the dataframe and Matplotlib allows us to create the visualizations. As we can see from the graphs below, sqft makes the larges differences in prices, bathrooms and bedrooms less so and minutes:
+				</br>
+					<img src="images/sqft.png">
+					<img src="images/bathrooms.png">
+					<img src="images/bedrooms.png">
+					<img src="images/subway.png">
+				</li>
+        		<li>
+					Lastly we now use the regression algorithm to find the average price of an apartment in manhattan with 1 bedroom, 1 bathroom and 800 sqft. The result is $4205 a month. When buying apartments that match these criteries, we will now know to look for prices lower than this amount:
+					</br>
+					<img src="images/results.JPG">
+				</li>
+        		<li>
+					Going back to MySQL, lets now finish our database. First we create a dataset of fake owners who now have purchased some properties and we use a foreign key to link owners to the apartments table. We use a left join on the owners table to the apartments table so we can see in detail the apartments that these owners have:
+					<img src="images/owners.JPG">
+				</li>
+        		<li>
+					Then we create a dataset of fake guests who will be looking to book some of these apartments:
+					</br>
+					<img src="images/guests.JPG">
+				</li>
+        		<li>
+					In order to link these guests with the rest of teh database, well need to create our final 'bookings' table which will contain the apartment that they booked and the time of their reservation. After, we link that with our owners to see a view of which owners can expect guests, at which apartment and when. This time we use an inner join so we only see apartments that are booked:
+					</br>
+					<img src="images/bookings.JPG">
+				</li>
+        		<li>
+					We have completed our mock Airbnb database, here is the enhanced entity-relationship diagram of our database:
+					</br>
+					<img src="images/EER.JPG">
+				</li>
+			</ul>
+		</div>
+
+		<!-- footer-->
+		<footer class="footer">
+			Database was created using MySQL Workbench. Visualizations created using Python. Page created using HTML,
+			CSS & Javascript, source code available
+			<a href="https://github.com/rogerqiu7/Covid-Report">
+				here on my GitHub
+			</a>
+		</footer>
+	</body>
+</html>

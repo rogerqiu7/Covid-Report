@@ -1,0 +1,66 @@
+/* Set universal colors */
+* {
+	background-color: #091921;
+	color: #f3f3f3;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+/* style and position of title*/
+.title {
+	text-align: center;
+	font-size: 60px;
+	margin: 30px;
+}
+
+/* intro font style */
+h2 {
+	font-size: 20px;
+	margin: 3%;
+}
+
+h2 a:link {
+	color: #3882f6;
+}
+
+/* main content style */
+.main {
+	font-size: 18px;
+}
+
+/* list style */
+ul {
+	list-style: circle;
+	margin-left: 10px;
+}
+
+/* list margin */
+li {
+	margin: 3%;
+}
+
+/* set image border */
+img {
+	border: 4px solid #3882f6;
+	border-radius: 10px;
+	background-color: white;
+}
+
+/* set footer to be at bottom of page */
+footer {
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+	background-color: #000000;
+	font-size: 16px;
+	color: #fff;
+	font-family: "Roboto", arial;
+	text-align: center;
+}
+
+/* let visited github link to remain white */
+a:visited {
+	color: #3882f6;
+}
